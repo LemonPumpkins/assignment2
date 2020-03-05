@@ -21,7 +21,6 @@
         <tr>
             
             <th>ID</th>   
-             
             <th>Title</th>
             <th>Completed</th>   
         </tr>
@@ -33,14 +32,14 @@
 </div>
         <a href="/todo">todo</a>
 
-        <a href="#">home</a>
+        <a href="/">home</a>
        
     
 </body>
 </html>
 <script>
-    $(document).ready(function(){
-        $.getJSON("todo.json",function(data){
+    $(document).ready(function(){ 
+        $.getJSON("todo",function(data){
             var tddata = '';
             $.each(data,function(key, value){
                  tddata += '<tr>';
@@ -48,7 +47,7 @@
                  tddata += '<td>'+value.title +'</td>';
                  tddata += '<td>'+value.completed +'</td>';
                  tddata += '</tr>';
-            });
+            })
             $('#todotable').append(tddata);
         });
     });
